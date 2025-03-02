@@ -1,7 +1,11 @@
+import 'package:flash/login_page.dart';
+import 'package:flash/registration_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+ const HomePage({super.key});
+
+  static const String id = 'Home Page';
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -25,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                   height: 60,
                 ),
                 const Text(
-                  'F L A S H  C H A T',
+                  'F L A S H   C H A T',
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.w900,
@@ -45,6 +49,12 @@ class _HomePageState extends State<HomePage> {
                 child: MaterialButton(
                   onPressed: () {
                    //LOGIN SCREEN
+                   Navigator.push(
+                       context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                     );
                   },
                   minWidth: 200,
                   height: 42,
@@ -62,7 +72,13 @@ class _HomePageState extends State<HomePage> {
                 elevation: 5,
                 child: MaterialButton(
                   onPressed: () {
-                    //Go to registration screen.
+                    //REGISTRATION PAGE
+                    Navigator.push(
+                       context,
+                       MaterialPageRoute(
+                        builder: (context) => const RegistrationPage(),
+                       ),
+                    );
                   },
                   minWidth: 200,
                   height: 42,
@@ -75,7 +91,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-
     );
   }
 }
