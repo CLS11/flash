@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
 
+  static const String id = 'Chat Page';
+
   @override
   State<ChatPage> createState() => _ChatPageState();
 }
@@ -16,11 +18,11 @@ class _ChatPageState extends State<ChatPage> {
         leading: null,
         actions: [
           IconButton(
-              icon: const Icon(Icons.close),
-              onPressed: () {
-                //Implement logout functionality
-              },
-            ),
+            icon: const Icon(Icons.close),
+            onPressed: () {
+              //Implement logout functionality
+            },
+          ),
         ],
         title: const Text('CHAT'),
         backgroundColor: Colors.lightBlueAccent,
@@ -46,10 +48,7 @@ class _ChatPageState extends State<ChatPage> {
                     onPressed: () {
                       //Implement send functionality.
                     },
-                    child: const Text(
-                      'Send',
-                      style: sendButtonTextStyle,
-                    ),
+                    child: const Text('Send', style: sendButtonTextStyle),
                   ),
                 ],
               ),
