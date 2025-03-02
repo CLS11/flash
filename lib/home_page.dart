@@ -24,9 +24,12 @@ class _HomePageState extends State<HomePage> {
           children: [
             Row(
               children: [
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60,
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    child: Image.asset('images/logo.png'),
+                    height: 60,
+                  ),
                 ),
                 const Text(
                   'F L A S H   C H A T',
