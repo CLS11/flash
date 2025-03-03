@@ -20,3 +20,22 @@ const messageContainerDecoration = BoxDecoration(
       ),
     ),
 );
+
+const textFieldDecoration = InputDecoration(
+  hintText: 'Enter your text',
+  contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+  border: OutlineInputBorder(
+    borderRadius: BorderRadius.all(Radius.circular(32)),
+  ),
+  enabledBorder: OutlineInputBorder(
+    borderSide: BorderSide(color: Colors.lightBlueAccent),
+    borderRadius: BorderRadius.all(Radius.circular(32)),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderSide: BorderSide(
+      color: Colors.lightBlueAccent, 
+      width: 2,
+    ),
+    borderRadius: BorderRadius.all(Radius.circular(32),),
+  ),
+);
