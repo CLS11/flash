@@ -1,6 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flash/login_page.dart';
 import 'package:flash/registration_page.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -61,9 +64,12 @@ class _HomePageState extends State<HomePage>
                     height: 60,
                   ),
                 ),
-                const Text(
-                  'F L A S H   C H A T',
-                  style: TextStyle(fontSize: 45, fontWeight: FontWeight.w900),
+                TypewriterAnimatedTextKit(
+                  text: const ['F L A S H   C H A T'],
+                  textStyle: const TextStyle(
+                    fontSize: 45, 
+                    fontWeight: FontWeight.w900,
+                  ),
                 ),
               ],
             ),
