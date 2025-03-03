@@ -1,7 +1,7 @@
-import 'package:flash/chat_page.dart';
-import 'package:flash/home_page.dart';
-import 'package:flash/login_page.dart';
-import 'package:flash/registration_page.dart';
+import 'package:flash/pages/chat_page.dart';
+import 'package:flash/pages/home_page.dart';
+import 'package:flash/pages/login_page.dart';
+import 'package:flash/pages/registration_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
