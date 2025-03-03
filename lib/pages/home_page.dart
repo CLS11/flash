@@ -3,8 +3,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flash/pages/login_page.dart';
 import 'package:flash/pages/registration_page.dart';
-import 'package:flash/tiles/login_tile.dart';
-import 'package:flash/tiles/registration_tile.dart';
+import 'package:flash/tiles/button_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -35,10 +34,10 @@ class _HomePageState extends State<HomePage>
     ).animate(controller);
 
     controller
-    ..forward()
-    ..addListener(() {
-      setState(() {});
-    });
+      ..forward()
+      ..addListener(() {
+        setState(() {});
+      });
   }
 
   @override
@@ -76,18 +75,17 @@ class _HomePageState extends State<HomePage>
               ],
             ),
             const SizedBox(height: 50),
-            LoginTile(
+            ButtonTile(
               color: Colors.lightBlueAccent,
               text: 'LOG IN',
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginPage(),
-                  ),
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
                 );
               },
             ),
-            RegistrationTile(
+            ButtonTile(
               color: Colors.blueAccent,
               text: 'REGISTER',
               onPressed: () {
