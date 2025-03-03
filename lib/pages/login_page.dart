@@ -1,3 +1,5 @@
+import 'package:flash/constants.dart';
+import 'package:flash/tiles/button_tile.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -32,26 +34,8 @@ class _LoginPageState extends State<LoginPage> {
               onChanged: (value) {
                 //Do something with the user input.
               },
-              decoration: const InputDecoration(
+              decoration: textFieldDecoration.copyWith(
                 hintText: 'Enter your email',
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 20,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.lightBlueAccent),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.lightBlueAccent,
-                    width: 2,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
               ),
             ),
             const SizedBox(height: 8),
@@ -59,44 +43,15 @@ class _LoginPageState extends State<LoginPage> {
               onChanged: (value) {
                 //Do something with the user input.
               },
-              decoration: const InputDecoration(
-                hintText: 'Enter your password.',
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 20,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.lightBlueAccent),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.lightBlueAccent,
-                    width: 2,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
+              decoration: textFieldDecoration.copyWith(
+                hintText: 'Enter your password',
               ),
             ),
             const SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Material(
-                color: Colors.lightBlueAccent,
-                borderRadius: const BorderRadius.all(Radius.circular(30)),
-                elevation: 5,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Implement login functionality.
-                  },
-                  minWidth: 200,
-                  height: 42,
-                  child: const Text('Log In'),
-                ),
-              ),
+            ButtonTile(
+              color: Colors.lightBlueAccent, 
+              text: 'LOG IN', 
+              onPressed: (){},
             ),
           ],
         ),

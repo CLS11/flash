@@ -1,3 +1,5 @@
+import 'package:flash/constants.dart';
+import 'package:flash/tiles/button_tile.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -32,23 +34,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
               onChanged: (value) {
                 //USER INPUT
               },
-              decoration: const InputDecoration(
+              decoration: textFieldDecoration.copyWith(
                 hintText: 'Enter your email',
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 20,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
               ),
             ),
             const SizedBox(height: 8),
@@ -56,44 +43,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
               onChanged: (value) {
                 //Do something with the user input.
               },
-              decoration: const InputDecoration(
+              decoration: textFieldDecoration.copyWith(
                 hintText: 'Enter your password',
-                contentPadding: EdgeInsets.symmetric(
-                  vertical: 10,
-                  horizontal: 20,
-                ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.blueAccent, width: 2),
-                  borderRadius: BorderRadius.all(Radius.circular(32)),
-                ),
               ),
             ),
             const SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Material(
-                color: Colors.blueAccent,
-                borderRadius: const BorderRadius.all(Radius.circular(30)),
-                elevation: 5,
-                child: MaterialButton(
-                  onPressed: () {
-                    //Implement registration functionality.
-                  },
-                  minWidth: 200,
-                  height: 42,
-                  child: const Text(
-                    'REGISTER',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
+            ButtonTile(
+              color: Colors.blueAccent, 
+              text: 'REGISTER', 
+              onPressed: (){},
             ),
           ],
         ),
