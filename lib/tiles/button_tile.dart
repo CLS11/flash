@@ -24,7 +24,12 @@ class ButtonTile extends StatelessWidget {
           onPressed: onPressed,
           minWidth: 200,
           height: 42,
-          child: Text(text),
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
     );
