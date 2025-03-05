@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, inference_failure_on_instance_creation
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flash/pages/login_page.dart';
@@ -18,7 +18,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
-  late Animation animation;
+  late Animation<dynamic> animation;
 
   @override
   void initState() {
@@ -60,9 +60,9 @@ class _HomePageState extends State<HomePage>
               children: [
                 Hero(
                   tag: 'logo',
-                  child: Container(
-                    child: Image.asset('images/logo.png'),
+                  child: SizedBox(
                     height: 60,
+                    child: Image.asset('images/logo.png'),
                   ),
                 ),
                 TypewriterAnimatedTextKit(
