@@ -29,7 +29,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
           children: [
             Hero(
               tag: 'logo',
-              child: Container(
+              child: SizedBox(
                 height: 200,
                 child: Image.asset('images/logo.png'),
               ),
@@ -40,7 +40,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               textAlign: TextAlign.center,
               onChanged: (value) {
                 //USER INPUT
-                email:
+                email =
                 value;
               },
               decoration: textFieldDecoration.copyWith(
@@ -53,7 +53,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               textAlign: TextAlign.center,
               onChanged: (value) {
                 //Do something with the user input.
-                password:
+                password =
                 value;
               },
               decoration: textFieldDecoration.copyWith(
@@ -70,15 +70,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     email: email,
                     password: password,
                   );
-                  if (newUser != null) {
-                    await Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ChatPage(),
-                      ),
-                    );
-                  }
-                } catch (e) {
+                  await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ChatPage(),
+                    ),
+                  );
+                  } catch (e) {
                   print(e);
                 }
               },
