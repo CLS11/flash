@@ -10,6 +10,9 @@ android {
     namespace = "com.example.myapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
+    defaultConfig{
+        minSdkVersion 23
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
