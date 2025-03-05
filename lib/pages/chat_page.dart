@@ -19,13 +19,11 @@ class _ChatPageState extends State<ChatPage> {
     super.initState();
     getCurrentUser();
   }
-  void getCurrentUser() async {
+  Future<void> getCurrentUser() async {
     try {
-      final user = await _auth.currentUser!;
-      if (user != null) {
-        loggedInUser = user;
-      }
-    } catch (e) {
+      final user = _auth.currentUser!;
+      loggedInUser = user;
+        } catch (e) {
       print(e);
     }
   }
@@ -34,7 +32,6 @@ class _ChatPageState extends State<ChatPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: null,
         actions: [
           IconButton(
             icon: const Icon(Icons.close),
