@@ -32,6 +32,21 @@ class _ChatPageState extends State<ChatPage> {
     }
   }
 
+  // Future<void> getMessages() async {
+  //   final messages = await _firestore.collection('messages').get();
+  //   for (final message in messages.docs) {
+  //     print(message.data());
+  //   }
+  // }
+
+  Future<void> messagesStream() async {
+    await for( final snapshot in _firestore.collection('messages').snapshots()){
+      for (final message in snapshot.docs) {
+      print(message.data());
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
