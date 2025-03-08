@@ -40,9 +40,10 @@ class _ChatPageState extends State<ChatPage> {
   // }
 
   Future<void> messagesStream() async {
-    await for( final snapshot in _firestore.collection('messages').snapshots()){
+    await for (final snapshot
+        in _firestore.collection('messages').snapshots()) {
       for (final message in snapshot.docs) {
-      print(message.data());
+        print(message.data());
       }
     }
   }
@@ -68,6 +69,32 @@ class _ChatPageState extends State<ChatPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            StreamBuilder<QuerySnapshot>(
+              stream: _firestore.collection('messages').snapshots(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  final messages = snapshot.data?.docs;
+                  List<Text> messageWidgets = [];
+                  for (final message in messages!) {
+                    final messageData = message.data()! as Map<String, dynamic>;
+                    final messageText = messageData['text'];
+                    final messageSender = messageData['sender'];
+                    final messageWidget = Text(
+                      '$messageText from $messageSender',
+                    );
+                    messageWidgets.add(messageWidget);
+                  }
+                  return Column(
+                    children: messageWidgets,
+                  );
+                }
+                return const Center(
+                  child: CircularProgressIndicator(
+                    backgroundColor: Colors.lightBlueAccent,
+                  ),
+                );
+              },
+            ),
             Container(
               decoration: messageContainerDecoration,
               child: Row(
